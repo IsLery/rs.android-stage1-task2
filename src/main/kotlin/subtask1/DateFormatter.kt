@@ -4,6 +4,7 @@ package subtask1
 import java.time.DateTimeException
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 
 class DateFormatter {
@@ -17,7 +18,7 @@ class DateFormatter {
             return "Такого дня не существует"
         }
 
-        val formatter = DateTimeFormatter.ofPattern("dd MMMM, EEEE")
+        val formatter = DateTimeFormatter.ofPattern("dd MMMM, EEEE").withLocale(Locale("RU"))
         return date.format(formatter)
     }
 }
