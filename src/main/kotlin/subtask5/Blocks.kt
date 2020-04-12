@@ -9,11 +9,10 @@ class Blocks {
 
     fun getData(blockA: Array<Any>, blockB: KClass<*>): Any {
         val oper = null
-        val name = blockB.simpleName
-        return when (name){
-            "String" -> concatString(blockA)
-            "Int" -> sumOfInt(blockA)
-            "LocalDate" -> latestDate(blockA)
+        return when (blockB){
+            String :: class -> concatString(blockA)
+            Int :: class -> sumOfInt(blockA)
+            LocalDate :: class-> latestDate(blockA)
             else -> Any()
         }
     }
